@@ -1,9 +1,16 @@
 import React from 'react'
+import {AiOutlineTwitter} from 'react-icons/ai'
 
-function Footer() {
+export default function Footer() {
   return (
-    <div>Footer</div>
+    <div className='footer-container'>
+      <p>
+        2022 Sonsa All rights reserved
+      </p>
+      {/* <p className='icons'>
+    <AiOutlineTwitter />
+      </p> */}
+    </div>
   )
 }
 
-export default Footer

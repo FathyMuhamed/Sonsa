@@ -67,7 +67,8 @@ width: 100%;
 .logo{
   color: gray;
   font-size: 18px;
-
+  color: #f02d34;
+  font-weight: 700;
 }
 .cart-icon{
   font-size: 25px;
@@ -525,7 +526,7 @@ padding: 30px 65px;
 }
 .quantity-desc{
   border: 1px solid gray;
-padding: 6px;
+ padding: 6px;
 }
 .quantity-desc span{
   font-size: 16px;

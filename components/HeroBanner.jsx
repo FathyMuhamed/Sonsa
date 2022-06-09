@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link';
 import { urlFor } from '../lib/client';
 export default function HeroBanner({ data }) {
-	console.log(data);
 	const { desc, smallText, midText, buttonText, largeText1, image, product } = data
 	return (
 		<div className='hero-banner-container'>
