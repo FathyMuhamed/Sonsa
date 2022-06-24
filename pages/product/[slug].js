@@ -12,8 +12,12 @@ import Product from './../../components/Product';
 export default function ProductDetails({ product,
 	products }) {
 	const [index, setIndex] = useState(0);
-	const { incQty, decQty, qty, onAdd } = useStateContext();
+	const { incQty, decQty, qty, onAdd, setShowCart } = useStateContext();
 	const { image, name, details, price } = product;
+	const handleBuyNow = () => {
+		onAdd(product, qty);
+		setShowCart(true);
+	}
 	return (
 		<div>
 			<div className='product-detail-container'>
@@ -24,7 +28,9 @@ export default function ProductDetails({ product,
 					</div>
 					<div className='small-images-container'>
 						{image?.map((item, i) => (
-							<img src={urlFor(item)} alt=""
+							<img src={urlFor(item)}
+								alt="product image"
+								key={i}
 								className={i === index ? 'small-image selected-image' : 'small-image'}
 								onMouseEnter={() => setIndex(i)}
 
@@ -53,7 +59,7 @@ export default function ProductDetails({ product,
 							<span className='minus' onClick={decQty}>
 								<AiOutlineMinus />
 							</span>
-							<span className='num' onClick="">
+							<span className='num' >
 								{qty}
 							</span>
 							<span className='plus' onClick={incQty}>
@@ -63,7 +69,7 @@ export default function ProductDetails({ product,
 					</div>
 					<div className="buttons">
 						<button type='button' onClick={() => onAdd(product, qty)} className='add-to-cart'>Add To Cart</button>
-						<button type='button' onClick="" className='buy-now'>Buy Now </button>
+						<button type='button' onClick={handleBuyNow} className='buy-now'>Buy Now </button>
 					</div>
 				</div>
 			</div>
